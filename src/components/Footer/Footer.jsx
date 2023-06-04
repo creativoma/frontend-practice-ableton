@@ -1,5 +1,7 @@
 // Styles
 import styles from "./Footer.module.css";
+import { easeOut, motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 // Assets
 import logo from "../../assets/svg/logo.svg";
@@ -10,8 +12,23 @@ import iconYoutube from "../../assets/svg/youtube.svg";
 import iconInstagram from "../../assets/svg/instagram.svg";
 
 const Footer = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
   return (
-    <footer>
+    <motion.footer
+      ref={ref}
+      initial={{ transform: "translateY(10px)", opacity: 0 }}
+      animate={
+        isInView
+          ? { transform: "translateY(0)", opacity: 1 }
+          : { transform: "translateY(10px)", opacity: 0 }
+      }
+      transition={
+        isInView
+          ? { duration: 0.85, delay:0.250, ease: easeOut }
+          : { duration: 0, ease: easeOut }
+      }
+    >
       <img
         className={styles.logo}
         src={logo}
@@ -92,7 +109,7 @@ const Footer = () => {
           />
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
