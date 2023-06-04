@@ -1,0 +1,12 @@
+section.container_foto_centro {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 130px;
+
+    & img {
+        object-fit: cover;
+        aspect-ratio: 16/9;
+    }
+}
+

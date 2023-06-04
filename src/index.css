@@ -1,0 +1,59 @@
+:root {
+    --yellow: #fbffa7;
+    --orange: #ff764d;
+    --lavanda-claro: #b1c5ff;
+    --lavanda: #d5b3ff;
+    --green: #b6ffc0;
+    --blue: #0000ff;
+    --gray: #f3f3f3;
+    --white: #fff;
+    --white-transparent: rgba(255, 255, 255, 0.90);
+    --black: #000;
+    --font-book: "Futura PT Book", sans-serif;
+    --font-book-oblique: "Futura PT Book Oblique", sans-serif;
+    --font-medium: "Futura PT Medium", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Futura PT Medium";
+    src: url(./fonts/futura-pt-medium.woff2) format("woff2");
+}
+
+@font-face {
+    font-family: "Futura PT Book";
+    src: url(./fonts/futura-pt-book.woff2) format("woff2");
+}
+
+@font-face {
+    font-family: "Futura PT Book Oblique";
+    src: url(./fonts/futura-pt-book-oblique.woff2) format("woff2");
+}
+
+::selection {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+html {
+    font-size: 62.5%;
+    background-color: var(--gray);
+}
+
+body {
+    font-family: var(--font-book);
+    font-size: 2rem;
+    max-width: 1580px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: var(--white);
+}
+
+a { 
+    text-decoration: none;
+}
