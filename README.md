@@ -5,9 +5,6 @@
 - [Challenge by Frontend Practice: "Landing Page for Ableton"](#challenge-by-frontend-practice-landing-page-for-ableton)
   - [Table of Contents](#table-of-contents)
   - [About the project](#about-the-project)
-  - [Screenshots](#screenshots)
-    - [Referece image:](#referece-image)
-    - [Final result](#final-result)
   - [Links](#links)
   - [Built with](#built-with)
   - [Author](#author)
@@ -19,16 +16,6 @@
 - React components
 - Variables in CSS
 - Vite as a bundler and dev server for React
-
-## Screenshots
-
-### Referece image:
-
-![screenshot](./src/assets/images/reference.webp)
-
-### Final result
-
-![screenshot](./src/image/screenshot-sample.png)
 
 ## Links
 
@@ -44,6 +31,7 @@
 - React & ReactDOM
 - Vite.js
 - Dompurify (sanitize HTML) 
+- Framer Motion (animations) 
 
 ## Author
 
