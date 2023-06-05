@@ -15,38 +15,34 @@ footer {
         gap: 50px;
         margin-bottom: 50px;
 
+        
+        & div.rrss {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+
+            & img {
+                width: 40px;
+                height: auto;
+                background-color: var(--blue);
+                cursor: pointer;
+            }
+        }
+
         & ul {
             line-height: 3.1rem;
 
-            & h4 {
+            & h2 {
                 font-weight: 700;
                 margin-bottom: 10px;
             }
 
-            & div.rrss {
-                display: flex;
-                gap: 10px;
-                margin-top: 15px;
-
-                & img {
-                    width: 40px;
-                    height: auto;
-                    background-color: var(--blue);
-                    cursor: pointer;
-                }
-            }
 
             & li {
                 list-style: none;
                 padding: 0;
                 margin: 0;
                 cursor: pointer;
-
-                &::after {
-                    content: ">";
-                    font-size: 1.3rem;
-                    margin-left: 5px;
-                }
             }
 
             & form.selectores {

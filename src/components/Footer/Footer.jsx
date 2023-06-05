@@ -1,7 +1,5 @@
 // Styles
 import styles from "./Footer.module.css";
-import { easeOut, motion, useInView } from "framer-motion";
-import { useRef } from "react";
 
 // Assets
 import logo from "../../assets/svg/logo.svg";
@@ -12,23 +10,8 @@ import iconYoutube from "../../assets/svg/youtube.svg";
 import iconInstagram from "../../assets/svg/instagram.svg";
 
 const Footer = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
   return (
-    <motion.footer
-      ref={ref}
-      initial={{ transform: "translateY(10px)", opacity: 0 }}
-      animate={
-        isInView
-          ? { transform: "translateY(0)", opacity: 1 }
-          : { transform: "translateY(10px)", opacity: 0 }
-      }
-      transition={
-        isInView
-          ? { duration: 0.85, delay:0.250, ease: easeOut }
-          : { duration: 0, ease: easeOut }
-      }
-    >
+    <footer>
       <img
         className={styles.logo}
         src={logo}
@@ -39,53 +22,70 @@ const Footer = () => {
       />
       <div className={styles.container_ul}>
         <ul>
-          <li>Register Live or Push</li>
-          <li>About Ableton</li>
-          <li>Jobs</li>
-          <div className={styles.rrss}>
-            <img src={iconFacebook} alt="Facebook" title="Facebook" />
-            <img src={iconTwitter} alt="Twitter" title="Twitter" />
-            <img src={iconYoutube} alt="Youtube" title="Youtube" />
-            <img src={iconInstagram} alt="Instagram" title="Instagram" />
-          </div>
+          <li>Register Live or Push &gt;</li>
+          <li>About Ableton &gt;</li>
+          <li>Jobs &gt;</li>
+          <li>
+            <div className={styles.rrss}>
+              <img src={iconFacebook} alt="Facebook" title="Facebook" />
+              <img src={iconTwitter} alt="Twitter" title="Twitter" />
+              <img src={iconYoutube} alt="Youtube" title="Youtube" />
+              <img src={iconInstagram} alt="Instagram" title="Instagram" />
+            </div>
+          </li>
         </ul>
         <ul>
-          <h4>Education</h4>
-          <li>Offers for students and teachers</li>
-          <li>Ableton for the Classroom</li>
-          <li>Ableton for Colleges and Universities</li>
+          <li>
+            {" "}
+            <h2>Education</h2>
+          </li>
+          <li>Offers for students and teachers &gt;</li>
+          <li>Ableton for the Classroom &gt;</li>
+          <li>Ableton for Colleges and Universities &gt;</li>
         </ul>
         <ul>
-          <h4>Sign up to our newsletter</h4>
-          <p>
-            Enter your email address to stay up to date with the latest offers,
-            tutorials, downloads, surveys and more.
-          </p>
-          <form className={styles.newsletter} action="">
-            <input type="email" placeholder="Email Address" />
-            <input type="submit" value="Sign Up" />
-          </form>
+          <li>
+            <h2>Sign up to our newsletter</h2>
+          </li>
+          <li>
+            <p>
+              Enter your email address to stay up to date with the latest
+              offers, tutorials, downloads, surveys and more.
+            </p>
+          </li>
+          <li>
+            <form className={styles.newsletter} action="">
+              <input type="email" placeholder="Email Address" />
+              <input type="submit" value="Sign Up" />
+            </form>
+          </li>
         </ul>
       </div>
       <div className={styles.container_ul}>
         <ul>
-          <h4>Community</h4>
-          <li>Find Ableton User Groups</li>
-          <li>Find Certified Training</li>
-          <li>Become a Certified Trainer</li>
+          <li>
+            <h2>Community</h2>
+          </li>
+          <li>Find Ableton User Groups &gt;</li>
+          <li>Find Certified Training &gt;</li>
+          <li>Become a Certified Trainer &gt;</li>
         </ul>
         <ul>
-          <h4>Language and Location</h4>
-          <form className={styles.selectores} action="">
-            <select>
-              <option value="EN">English</option>
-              <option value="ES">Español</option>
-            </select>
-            <select>
-              <option value="Spain">España</option>
-              <option value="United States">United States</option>
-            </select>
-          </form>
+          <li>
+            <h2>Language and Location</h2>
+          </li>
+          <li>
+            <form className={styles.selectores} action="">
+              <select>
+                <option value="EN">English</option>
+                <option value="ES">Español</option>
+              </select>
+              <select>
+                <option value="Spain">España</option>
+                <option value="United States">United States</option>
+              </select>
+            </form>
+          </li>
         </ul>
       </div>
       <div className={styles.container_ul_final}>
@@ -109,7 +109,7 @@ const Footer = () => {
           />
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 };
 
