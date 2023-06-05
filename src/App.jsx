@@ -9,13 +9,13 @@ import FotoCentro from "./components/FotoCentro/FotoCentro.jsx";
 import VideoCentro from "./components/VideoCentro/VideoCentro.jsx";
 
 // Assets
-import img1 from "./assets/images/teclado.jpeg";
-import img2 from "./assets/images/mujer-caminando.jpeg";
-import img3 from "./assets/images/hombre-pizarra.jpeg";
-import img4 from "./assets/images/cartel.jpeg";
-import img5 from "./assets/images/estudio.jpeg";
-import img6 from "./assets/images/software.jpeg";
-import img7 from "./assets/images/portada.jpeg";
+import img1 from "./assets/images/teclado.jpeg?format=webp";
+import img2 from "./assets/images/mujer-caminando.jpeg?format=webp";
+import img3 from "./assets/images/hombre-pizarra.jpeg?format=webp";
+import img4 from "./assets/images/cartel.jpeg?format=webp";
+import img5 from "./assets/images/estudio.jpeg?format=webp";
+import img6 from "./assets/images/software.jpeg?format=webp";
+import img7 from "./assets/images/portada.jpeg?format=webp";
 
 // Styles
 import "./App.css";

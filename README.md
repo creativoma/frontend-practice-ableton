@@ -31,7 +31,8 @@
 - React & ReactDOM
 - Vite.js
 - Dompurify (sanitize HTML) 
-- Framer Motion (animations) 
+- Framer Motion (animations)
+- Imagetools (image compression)
 
 ## Author
 
