@@ -29,7 +29,7 @@ const BloqueTexto = (props) => {
       <section
         ref={ref}
         className={style.bloqueTexto}
-        style={{ border: "2px solid red" }}
+        // style={{ border: "2px solid red" }}
       >
         <motion.h2
           style={{ opacity, scale, filter, transform }}
