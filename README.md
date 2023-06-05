@@ -4,10 +4,15 @@
 
 - [Challenge by Frontend Practice: "Landing Page for Ableton"](#challenge-by-frontend-practice-landing-page-for-ableton)
   - [Table of Contents](#table-of-contents)
+  - [Disclaimer](#disclaimer)
   - [About the project](#about-the-project)
   - [Links](#links)
   - [Built with](#built-with)
   - [Author](#author)
+
+## Disclaimer
+
+***This is a challenge by Frontend Practice but I applied my own changes to the design and the code for learning purposes.*** 
 
 ## About the project
 
