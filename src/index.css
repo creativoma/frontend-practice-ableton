@@ -52,6 +52,32 @@ body {
     min-height: 100vh;
     margin: 0 auto;
     background-color: var(--white);
+    position: relative;
+}
+
+div.line {
+    position: fixed;
+    width: 100%;
+    height: 2px;
+    left: 0;
+}
+
+div.one {
+    top: 25%;
+    transform: translateY(-25%);
+    background-color: red;
+}
+
+div.two {
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: red;
+}
+
+div.three {
+    top: 75%;
+    transform: translateY(-75%);
+    background-color: red;
 }
 
 a { 

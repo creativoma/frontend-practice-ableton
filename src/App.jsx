@@ -17,9 +17,6 @@ import img5 from "./assets/images/estudio.jpeg?format=webp";
 import img6 from "./assets/images/software.jpeg?format=webp";
 import img7 from "./assets/images/portada.jpeg?format=webp";
 
-// Styles
-import "./App.css";
-
 function App() {
   return (
     <main>
@@ -40,7 +37,11 @@ function App() {
         titulo="Making music isn’t easy. It takes time, effort, and learning. But when you’re in the flow, it’s incredibly rewarding."
         texto="We feel the same way about making Ableton products. The driving force behind Ableton is our passion for what we make, and the people we make it for."
       />
-      <VideoCentro portada={img7} video="https://www.youtube.com/embed/9SbnhgjeyXA?autoplay=1" detalle="Ableton" />
+      <VideoCentro
+        portada={img7}
+        video="https://www.youtube.com/embed/9SbnhgjeyXA?autoplay=1"
+        detalle="Ableton"
+      />
       <BloqueTexto
         titulo="We are more than 350 people from 30 different countries divided between our headquarters in Berlin and our offices in Los Angeles and Tokyo."
         texto="Most of us are active musicians, producers, and DJs, and many of us use Live and Push every day. We come from a wide range of cultural and professional backgrounds. Some of us have PhDs, some are self-taught, and most of us are somewhere in between. What connects us is the shared belief that each of us has the skills and knowledge to contribute to something big: helping to shape the future of music culture."
