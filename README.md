@@ -26,20 +26,20 @@
 
 - Repo: [Here](#)
 - Deploy: [Here](#)
-- Design provide by Frontend Practice [Here!](https://www.frontendpractice.com/projects/ableton)
+- Design provide by Frontend Practice: [Here](https://www.frontendpractice.com/projects/ableton)
 
 ## Built with
 
 - HTML5
 - CSS3 
 - Modern Javascript
-- React & ReactDOM
-- Vite.js
-- Dompurify (sanitize HTML) 
-- Framer Motion (animations)
-- Imagetools (image compression)
+- React & ReactDOM: [reactjs.org](https://reactjs.org/)
+- Vite.js: [vitejs.dev](https://vitejs.dev/)
+- Framer Motion: [framer.com/motion](https://www.framer.com/motion/)
+- Dompurify (sanitize HTML): [npmjs.com/package/dompurify](https://www.npmjs.com/package/dompurify)
+- Imagetools (image compression): [¡npmjs.com/package/imagetools](https://www.npmjs.com/package/imagetools)
 
 ## Author
 
-- Github: [https://github.com/creativoma](https://github.com/creativoma)
-- Linkedin: [https://www.linkedin.com/in/ma-marianoalvarez/](https://www.linkedin.com/in/ma-marianoalvarez/)
+- Github: [github.com/creativoma](https://github.com/creativoma)
+- Linkedin: [linkedin.com/in/ma-marianoalvarez/](https://www.linkedin.com/in/ma-marianoalvarez/)
