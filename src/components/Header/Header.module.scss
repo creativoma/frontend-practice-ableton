@@ -1,7 +1,6 @@
 header {
 
     & div.container_main {
-        border-bottom: 2px solid var(--gray);
         display: grid;
         grid-template-columns: auto 7fr 3fr;
         align-items: center;
@@ -56,9 +55,41 @@ header {
         }
     }
 
+    & div.container_extra {
+        display: grid;
+        grid-template-columns: auto 7fr 3fr;
+        align-items: center;
+        gap: 35px;
+        padding: 20px 40px;
+
+        & h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        & ul {
+            display: flex;
+            gap: 36px;
+            flex-wrap: wrap;
+            list-style: none;
+
+            & li {
+
+                &:nth-child(5) {
+                    color: var(--orange)
+                }
+            }
+        }
+    }
+
     & div.container_secondary {
         padding: 20px 40px;
         background-color: var(--white-transparent);
+        border-top: 2px solid var(--gray);
+        outline: 1px solid var(--blue);
+        max-width: 1580px;
+        width: 100%;
+        z-index: 999999999999;
 
         & ul {
             display: flex;

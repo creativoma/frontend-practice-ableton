@@ -1,6 +1,6 @@
 :root {
     --yellow: #fbffa7;
-    --orange: #D63300;
+    --orange: #FD5948;
     --lavanda-claro: #b1c5ff;
     --lavanda: #d5b3ff;
     --green: #b6ffc0;
@@ -82,4 +82,9 @@ div.three {
 
 a { 
     text-decoration: none;
+}
+
+section {
+        /* outline random color */
+        outline: 1px solid blue;
 }

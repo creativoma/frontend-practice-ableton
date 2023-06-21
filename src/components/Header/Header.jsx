@@ -1,82 +1,61 @@
-import { useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import simbolo from "/favicon.svg";
+import { motion, useTransform, useScroll } from "framer-motion";
 
 const Header = () => {
 
+  // Cambiando el color de fondo del header al hacer scroll y fijándolo al final
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+    initial: 0,
+  });
+  const backgroundColor = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["#f00", "#f2f"]
+  );
+  const position = useTransform(scrollYProgress, (value) => {
+    if (value === 0) {
+      return "relative";
+    } else if (value === 1) {
+      return "fixed";
+    } else {
+      return "relative";
+    }
+  });
+  const top = useTransform(scrollYProgress, [0, 1], ["auto", "0px"]);
+
+  // Ocultando el header al hacer scroll hacia abajo y mostrándolo al hacer scroll hacia arriba
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  function update() {
+    if (scrollY.get() > scrollY.getPrevious() && scrollY.get() > 500) {
+      setHidden(true);
+    } else if (scrollY.get() < scrollY.getPrevious()) {
+      setHidden(false);
+    }
+  }
+
   useEffect(() => {
-
-    const elementParent = document.getElementById("elementParent");
-    const heightElementParent = elementParent.offsetHeight;
-    const widthElementParent = elementParent.offsetWidth;
-
-    const fixedMenu = document.getElementById("fixedMenu");
-    const heightElement = fixedMenu.offsetHeight;
-    const heroElement = document.getElementById("heroElement");
-    
-    const scrollReset = 0;
-    const scrollEnd = 800;
-    let lastScrollTop = 0;
-
-    
-
-    const scrollFunction = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (scrollTop > lastScrollTop) {
-        scrollDownFunction();
-      } else {
-        scrollUpFunction();
-      }
-
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    const unsubscribe = scrollY.on("change", update);    
+    return () => {
+      unsubscribe();
     };
+  }, [scrollY]);
 
+  const variants = {
+    visible: { opacity: 1, y: 0 },
+    initial: { opacity: 0, y: 100 },
+    hidden: { opacity: 0, y: -100 },
+  };
 
-    const scrollDownFunction = () => {
-      if (window.scrollY < heightElementParent) {
-        fixedMenu.style.transition = "none";
-        fixedMenu.style.transform = "translateY(0px)";
-        fixedMenu.style.position = "relative";
-        heroElement.style.marginTop = `${scrollReset}px`;
-      } else if (window.scrollY > heightElementParent && window.scrollY < scrollEnd) {
-        fixedMenu.style.transition = "none";
-        fixedMenu.style.transform = `translateY(-${heightElementParent}px)`;
-        fixedMenu.style.position = "fixed";
-        fixedMenu.style.width = `${widthElementParent}px`;
-        heroElement.style.marginTop = `${heightElement}px`;
-      } else if (window.scrollY > scrollEnd) {
-        fixedMenu.style.transition = "all 150ms ease";
-        fixedMenu.style.transform = `translateY(-${heightElementParent*2}px)`;
-      }
-    };
-
-    const scrollUpFunction = () => {
-      if (window.scrollY < heightElementParent) {
-        fixedMenu.style.transition = "none";
-        fixedMenu.style.transform = "translateY(0px)";
-        fixedMenu.style.position = "relative";
-        heroElement.style.marginTop = `${scrollReset}px`;
-      } else if (window.scrollY > heightElementParent && window.scrollY < scrollEnd) {
-        fixedMenu.style.transition = "all 150ms ease";
-        fixedMenu.style.transform = `translateY(-${heightElementParent}px)`;
-        fixedMenu.style.position = "fixed";
-        fixedMenu.style.width = `${widthElementParent}px`;
-        heroElement.style.marginTop = `${heightElement}px`;
-      } else if (window.scrollY > scrollEnd) {
-        fixedMenu.style.transition = "all 150ms ease";
-        fixedMenu.style.transform = `translateY(-${heightElementParent*2}px)`;
-      }
-    };
-
-
-    window.addEventListener("scroll", scrollFunction);
-
-
-  }, []);
   return (
     <header>
-      <div id="elementParent" className={styles.container_main}>
+      <div className={styles.container_main}>
         <img
           src={simbolo}
           alt="Logo de Ableton"
@@ -99,13 +78,33 @@ const Header = () => {
           <li>Try Live for free</li>
         </ul>
       </div>
-      <div id="fixedMenu" className={styles.container_secondary}>
+      <div className={styles.container_extra} ref={ref}>
+        <div>
+          <h2>More on Ableton.com:</h2>
+          <ul>
+            <li>Blog</li>
+            <li>Ableton for the Classroom</li>
+            <li>Ableton for Colleges and Universities</li>
+            <li>Certified Training</li>
+            <li>About Ableton</li>
+            <li>Jobs</li>
+            <li>Apprenticeships</li>
+          </ul>
+        </div>
+      </div>
+      <motion.div
+        className={styles.container_secondary}
+        style={{ position, top, backgroundColor }}
+        animate={hidden ? "hidden" : "visible"}
+        variants={variants}
+        transition={{ duration: 0.3 }}
+      >
         <ul>
           <li>About</li>
           <li>Jobs</li>
           <li>Apprenticeships</li>
         </ul>
-      </div>
+      </motion.div>
     </header>
   );
 };
