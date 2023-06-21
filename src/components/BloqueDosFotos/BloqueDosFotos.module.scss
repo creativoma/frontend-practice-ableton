@@ -3,6 +3,20 @@ section.bloque_dos_fotos {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 1280px) {
+        padding: 80px 40px;
+        flex-direction: column;
+    }
+
+    & img {
+
+        @media screen and (max-width: 1280px) {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    }
 
 }
 

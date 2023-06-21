@@ -3,6 +3,20 @@ section.bloque_tres_fotos {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 1280px) {
+        padding: 80px 40px;
+        flex-direction: column;
+    }
+
+    & img {
+
+        @media screen and (max-width: 1280px) {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    }
 
     & div.dos_fotos {
         display: flex;
@@ -10,6 +24,21 @@ section.bloque_tres_fotos {
         align-items: center;
         gap: 130px;
         flex-direction: column;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 1280px) {
+            padding: 40px 0;
+            flex-direction: column;
+            gap: 40px;
+        }
+    
+        & img {
+
+            @media screen and (max-width: 1280px) {
+                width: 100%;
+                margin-bottom: 0px;
+            }
+        }
     }
 }
 

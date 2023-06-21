@@ -4,9 +4,16 @@ section.container_foto_centro {
     align-items: center;
     margin: 0 130px;
 
+    @media screen and (max-width: 1280px) {
+        margin: 0px;
+    }
+
     & img {
         object-fit: cover;
         aspect-ratio: 16/9;
+
+        @media screen and (max-width: 1280px) {
+            width: 100%;
+        }
     }
 }
-
