@@ -1,3 +1,8 @@
+/*** Breackpoints Header
+1280px
+1024px
+***/
+
 header {
 
     & div.container_main {
@@ -7,16 +12,36 @@ header {
         gap: 35px;
         padding: 20px 40px;
         min-height: 70px;
+        background-color: var(--white);
 
         & img {
             width: 60px;
             height: auto;
+
+            @media screen and (max-width: 1280px) {
+                width: 40px;
+            }
+        }
+
+        @media screen and (max-width: 1280px) {
+            grid-template-columns: auto auto 4fr;
+            gap: 20px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         & ul.ul_first {
             display: flex;
             gap: 35px;
+            flex-wrap: wrap;
 
+            @media screen and (max-width: 1280px) {
+                gap: 20px;
+            }
+            
             & li {
                 list-style: none;
                 padding: 0;
@@ -27,6 +52,10 @@ header {
 
                 &:last-child {
                     color: var(--orange);
+                }             
+                
+                @media screen and (max-width: 1280px) {
+                    font-size: 1.6rem;
                 }
             }
         }
@@ -35,10 +64,21 @@ header {
             display: flex;
             gap: 35px;
             align-items: center;
+            flex-wrap: wrap;
 
             &:last-child {
                 justify-content: flex-end;
+
+                @media screen and (max-width: 1024px) {
+                    justify-content: flex-start;
+                }
             }
+
+            @media screen and (max-width: 1280px) {
+                gap: 20px;
+            }
+
+            
 
             & li {
                 list-style: none;
@@ -51,6 +91,10 @@ header {
                 &:last-child {
                     color: var(--blue);
                 }
+
+                @media screen and (max-width: 1280px) {
+                    font-size: 1.6rem;
+                }
             }
         }
     }
@@ -61,10 +105,16 @@ header {
         align-items: center;
         gap: 35px;
         padding: 20px 40px;
+        background-color: var(--white);
+        display: none;
 
         & h2 {
             font-size: 3rem;
             margin-bottom: 15px;
+
+            @media screen and (max-width: 1280px) {
+                font-size: 2.4rem;
+            }
         }
 
         & ul {
@@ -78,6 +128,10 @@ header {
                 &:nth-child(5) {
                     color: var(--orange)
                 }
+
+                @media screen and (max-width: 1280px) {
+                    font-size: 1.6rem;
+                }
             }
         }
     }
@@ -86,11 +140,11 @@ header {
         padding: 20px 40px;
         background-color: var(--white-transparent);
         border-top: 2px solid var(--gray);
-        outline: 1px solid var(--blue);
         max-width: 1580px;
         width: 100%;
-        z-index: 999999999999;
-
+        background-color: var(--white);
+        transition: 200ms all ease;
+    
         & ul {
             display: flex;
             gap: 35px;
@@ -105,6 +159,10 @@ header {
 
                 &:first-child {
                     color: var(--orange);
+                }
+
+                @media screen and (max-width: 1280px) {
+                    font-size: 1.6rem;
                 }
             }
         }

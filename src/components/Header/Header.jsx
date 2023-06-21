@@ -1,22 +1,32 @@
-import { useRef, useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import simbolo from "/favicon.svg";
+import { useRef, useState, useEffect } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 
 const Header = () => {
+  const refMenuMain = useRef(null);
+  const refMenuDetails = useRef(null);
+  const refMenuSecondary = useRef(null);
 
-  // Cambiando el color de fondo del header al hacer scroll y fijándolo al final
-  const ref = useRef(null);
+  useEffect(() => {
+    const lastLi = refMenuMain.current.querySelector("ul li:last-child");
+
+    lastLi.addEventListener("click", () => {
+      if (refMenuDetails.current.style.display === "none") {
+        lastLi.innerHTML = "More -";
+        refMenuDetails.current.style.display = "block";
+      } else {
+        refMenuDetails.current.style.display = "none";
+        lastLi.innerHTML = "More +";
+      }
+    });
+  }, []);
+
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: refMenuSecondary,
     offset: ["start start", "end start"],
     initial: 0,
   });
-  const backgroundColor = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["#f00", "#f2f"]
-  );
   const position = useTransform(scrollYProgress, (value) => {
     if (value === 0) {
       return "relative";
@@ -28,7 +38,6 @@ const Header = () => {
   });
   const top = useTransform(scrollYProgress, [0, 1], ["auto", "0px"]);
 
-  // Ocultando el header al hacer scroll hacia abajo y mostrándolo al hacer scroll hacia arriba
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
 
@@ -41,7 +50,7 @@ const Header = () => {
   }
 
   useEffect(() => {
-    const unsubscribe = scrollY.on("change", update);    
+    const unsubscribe = scrollY.on("change", update);
     return () => {
       unsubscribe();
     };
@@ -55,7 +64,7 @@ const Header = () => {
 
   return (
     <header>
-      <div className={styles.container_main}>
+      <div className={styles.container_main} ref={refMenuMain}>
         <img
           src={simbolo}
           alt="Logo de Ableton"
@@ -73,12 +82,12 @@ const Header = () => {
           <li>Help</li>
           <li>More +</li>
         </ul>
-        <ul className={styles.ul_secondary}>
+        <ul className={styles.ul_secondary} >
           <li>Log in or register</li>
           <li>Try Live for free</li>
         </ul>
       </div>
-      <div className={styles.container_extra} ref={ref}>
+      <div className={styles.container_extra} ref={refMenuDetails}>
         <div>
           <h2>More on Ableton.com:</h2>
           <ul>
@@ -94,7 +103,8 @@ const Header = () => {
       </div>
       <motion.div
         className={styles.container_secondary}
-        style={{ position, top, backgroundColor }}
+        ref={refMenuSecondary}
+        style={{ position, top }}
         animate={hidden ? "hidden" : "visible"}
         variants={variants}
         transition={{ duration: 0.3 }}

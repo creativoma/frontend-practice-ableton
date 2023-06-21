@@ -1,11 +1,25 @@
+/*** Breackpoints Footer
+1280px
+1024px
+***/
+
 footer {
     border-top: 2px solid var(--gray);
     padding: 130px;
+
+    @media screen and (max-width: 1280px) {
+        padding: 80px 40px;
+    }
 
     & img.logo {
         width: 188px;
         margin-bottom: 80px;
         cursor: pointer;
+
+        @media screen and (max-width: 1280px) {
+            width: 150px;
+            margin-bottom: 50px;
+        }
     }
 
     & div.container_ul {
@@ -15,11 +29,15 @@ footer {
         gap: 50px;
         margin-bottom: 50px;
 
-        
+        @media screen and (max-width: 1280px) {
+            grid-template-columns: 1fr;
+        }
+
         & div.rrss {
             display: flex;
             gap: 10px;
             margin-top: 15px;
+            flex-wrap: wrap;
 
             & img {
                 width: 40px;
@@ -43,11 +61,16 @@ footer {
                 padding: 0;
                 margin: 0;
                 cursor: pointer;
+
+                @media screen and (max-width: 1280px) {
+                    font-size: 1.6rem;
+                }
             }
 
             & form.selectores {
                 display: flex;
                 gap: 10px;
+                flex-wrap: wrap;
 
                 select {
                     padding: 10px;
@@ -71,6 +94,7 @@ footer {
                 display: flex;
                 gap: 10px;
                 margin-top: 10px;
+                flex-wrap: wrap;
 
                 input[type="email"] {
                     padding: 10px;
@@ -80,6 +104,10 @@ footer {
                     font-family: var(--font-book);
                     width: 100%;
                     padding: 10px 20px;
+
+                    @media screen and (max-width: 1280px) {
+                        font-size: 1.6rem;
+                    }
                 }
 
                 input[type="submit"] {
@@ -90,6 +118,10 @@ footer {
                     font-size: 1.9rem;
                     font-family: var(--font-medium);
                     padding: 10px 30px;
+
+                    @media screen and (max-width: 1280px) {
+                        font-size: 1.6rem;
+                    }
                 }
             }
         }
@@ -102,9 +134,18 @@ footer {
         gap: 30px;
         margin-top: 80px;
 
+        @media screen and (max-width: 1280px) {
+            grid-template-columns: 1fr;
+        }
+
         & ul {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
+
+            @media screen and (max-width: 1280px) {
+                justify-content: center;
+            }
 
             & li {
                 list-style: none;
@@ -113,6 +154,10 @@ footer {
                 font-size: 1.5rem;
                 font-family: var(--font-medium);
                 cursor: pointer;
+
+                @media screen and (max-width: 1280px) {
+                    font-size: 1.3rem;
+                }
             }
         }
 
@@ -121,10 +166,19 @@ footer {
             gap: 10px;
             align-items: center;
             justify-content: flex-end;
+            flex-wrap: wrap;
+
+            @media screen and (max-width: 1280px) {
+                justify-content: center;
+            }
 
             & p {
                 font-size: 1.5rem;
                 font-family: var(--font-medium);
+
+                @media screen and (max-width: 1280px) {
+                    font-size: 1.3rem;
+                }
             }
 
             & img.simbolo {
