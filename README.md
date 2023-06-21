@@ -8,11 +8,14 @@
   - [About the project](#about-the-project)
   - [Links](#links)
   - [Built with](#built-with)
+  - [Screenshot](#screenshot)
   - [Author](#author)
 
 ## Disclaimer
 
 ***This is a challenge by Frontend Practice but I applied my own changes to the design and the code for learning purposes.*** 
+
+
 
 ## About the project
 
@@ -22,10 +25,11 @@
 - Variables in CSS
 - Vite as a bundler and dev server for React
 
+
 ## Links
 
-- Repo: [Here](#)
-- Deploy: [Here](#)
+- Repo: [Here](https://github.com/creativoma/frontend-practice-ableton)
+- Deploy: [Here](https://frontend-practice-ableton.vercel.app/)
 - Design provide by Frontend Practice: [Here](https://www.frontendpractice.com/projects/ableton)
 
 ## Built with
@@ -38,6 +42,10 @@
 - Framer Motion: [framer.com/motion](https://www.framer.com/motion/)
 - Dompurify (sanitize HTML): [npmjs.com/package/dompurify](https://www.npmjs.com/package/dompurify)
 - Imagetools (image compression): [¡npmjs.com/package/imagetools](https://www.npmjs.com/package/imagetools)
+
+## Screenshot
+
+![](./public/screenshot.png)
 
 ## Author
 
